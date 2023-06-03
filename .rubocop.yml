@@ -1,0 +1,64 @@
+require:
+  - rubocop-graphql
+  - rubocop-rails
+
+AllCops:
+  SuggestExtensions: false
+  NewCops: enable
+
+Style/Documentation:
+  Exclude:
+    - app/channels/inventory_updates_channel.rb
+    - app/controllers/graphql_controller.rb
+    - app/graphql/aldoshoes_schema.rb
+    - app/graphql/mutations/base_mutation.rb
+    - app/graphql/types/base_field.rb
+    - app/graphql/types/base_input_object.rb
+    - app/graphql/types/base_interface.rb
+    - app/graphql/types/base_object.rb
+    - app/graphql/types/base_union.rb
+    - app/graphql/types/mutation_type.rb
+    - app/graphql/types/query_type.rb
+    - app/helpers/application_helper.rb
+    - app/mailers/application_mailer.rb
+    - app/models/application_record.rb
+    - app/models/shoe.rb
+    - config/application.rb
+    - db/migrate/20230603191716_create_stores.rb
+    - db/migrate/20230603191718_create_shoes.rb
+    - test/application_system_test_case.rb
+    - test/test_helper.rb
+
+Metrics/MethodLength:
+  Exclude:
+    - app/controllers/graphql_controller.rb
+
+Naming/MethodParameterName:
+  Exclude:
+    - app/controllers/graphql_controller.rb
+
+GraphQL/MaxComplexitySchema:
+  Exclude:
+    - app/graphql/aldoshoes_schema.rb
+
+GraphQL/MaxDepthSchema:
+  Exclude:
+    - app/graphql/aldoshoes_schema.rb
+
+GraphQL/ObjectDescription:
+  Exclude:
+    - app/graphql/aldoshoes_schema.rb
+    - app/graphql/mutations/base_mutation.rb
+    - app/graphql/types/base_argument.rb
+    - app/graphql/types/base_connection.rb
+    - app/graphql/types/base_edge.rb
+    - app/graphql/types/base_enum.rb
+    - app/graphql/types/base_field.rb
+    - app/graphql/types/base_input_object.rb
+    - app/graphql/types/base_interface.rb
+    - app/graphql/types/base_object.rb
+    - app/graphql/types/base_scalar.rb
+    - app/graphql/types/base_union.rb
+    - app/graphql/types/mutation_type.rb
+    - app/graphql/types/node_type.rb
+    - app/graphql/types/query_type.rb
