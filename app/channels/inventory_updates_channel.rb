@@ -1,8 +1,9 @@
+# typed: true
 # frozen_string_literal: true
 
 class InventoryUpdatesChannel < ApplicationCable::Channel
   def subscribed
-    # stream_from "some_channel"
+    stream_from "inventory_update_channel"
   end
 
   def unsubscribed
