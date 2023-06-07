@@ -54,19 +54,22 @@ gem 'sorbet', group: :development
 gem 'sorbet-runtime'
 gem 'tapioca', require: false, group: :development
 
-gem 'eventmachine', git: 'https://github.com/eventmachine/eventmachine.git', branch: 'master'
+gem 'eventmachine', '1.3.0.dev.1', git: 'git@github.com:eventmachine/eventmachine', branch: 'master'
 gem 'faye-websocket'
 gem 'graphql'
 gem 'rubocop', require: false
 gem 'rubocop-graphql', require: false
 gem 'rubocop-rails', require: false
 gem 'sorted_set'
+
 group :development, :test do
+  gem 'byebug'
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
 end
 
 group :development do
+  gem 'graphiql-rails'
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'web-console'
 
@@ -83,4 +86,3 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
-gem 'graphiql-rails', group: :development
