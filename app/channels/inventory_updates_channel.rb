@@ -3,14 +3,10 @@
 
 class InventoryUpdatesChannel < ApplicationCable::Channel
   def subscribed
-    stream_from "inventory_updates_channel"
+    stream_from "inventory_update_channel"
   end
 
   def unsubscribed
     # Any cleanup needed when channel is unsubscribed
-  end
-
-  def receive(data)
-    ActionCable.server.broadcast("inventory_updates_channel", data)
   end
 end

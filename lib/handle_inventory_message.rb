@@ -1,13 +1,12 @@
+# typed: false
 # frozen_string_literal: true
 
-require 'rubygems'
-require 'bundler/setup'
-require 'em/pure_ruby'
-require 'faye/websocket'
-require 'byebug'
-require 'net/http'
-require 'net/https'
-Bundler.require
+# require 'rubygems'
+# require 'bundler/setup'
+# require 'em/pure_ruby'
+# require 'faye/websocket'
+# require 'byebug'
+# Bundler.require
 
 # Handle inventory messages coming from InventoryServer
 class HandleInventoryMessage
@@ -24,7 +23,7 @@ class HandleInventoryMessage
           req.body = {
             query: "
               mutation UpdateStoreInventory($store: String!, $model: String!, $inventory: Int!) {
-                updateStoreInventory(input: { store: $store, model: $model, inventory: $inventory }) {
+                updateInventory(input: { store: $store, model: $model, inventory: $inventory }) {
                   store {
                     id
                   }
