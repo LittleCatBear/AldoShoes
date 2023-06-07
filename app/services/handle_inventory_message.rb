@@ -1,9 +1,11 @@
+# typed: false
 # frozen_string_literal: true
 
 require 'rubygems'
 require 'bundler/setup'
-require 'em/pure_ruby'
-require 'faye/websocket'
+# require 'em/pure_ruby'
+# require 'faye/websocket'
+require 'byebug'
 Bundler.require
 
 # Handle inventory messages coming from InventoryServer
@@ -18,7 +20,8 @@ class HandleInventoryMessage
           valid_data = validated_data(data)
 
           puts valid_data # rubocop:disable Rails/Output
-          # TODO: UpdateStoreInventoryService.call(valid_data) if valid_data.presence
+          byebug
+          UpdateStoreInventoryService.call(valid_data) if valid_data.presence
         end
       end
     end
@@ -26,10 +29,13 @@ class HandleInventoryMessage
     private
 
     def validated_data(data)
-      # TODO: validate data
-      [data['store'], data['model'], data['inventory']]
+      store = data['store']
+      model = data['model']
+      inventory = data['inventory']
+      return unless store && model && inventory
+      return if inventory.negative?
+
+      { store:, model:, inventory: }
     end
   end
 end
-
-HandleInventoryMessage.run
