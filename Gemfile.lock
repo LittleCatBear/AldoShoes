@@ -106,7 +106,7 @@ GEM
       railties
       sprockets-rails
     graphql (2.0.22)
-    i18n (1.14.0)
+    i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.1.6)
       actionpack (>= 6.0.0)
@@ -218,7 +218,7 @@ GEM
       websocket (~> 1.0)
     set (1.0.3)
     sorbet (0.4.4250)
-    sorbet-runtime (0.5.10863)
+    sorbet-runtime (0.5.10864)
     sorted_set (1.0.3)
       rbtree
       set (~> 1.0)
