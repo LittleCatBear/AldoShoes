@@ -10,9 +10,10 @@ class UpdateStoreInventory < BaseMutation
   def resolve(input:)
     store = Store.find_or_create_by(name: input.store)
     shoe = Shoe.find_or_create_by(model: input.model)
-    inventory = Inventory.find_or_create_by(store: store, shoe: shoe)
+    inventory = Inventory.find_or_create_by(store:, shoe:)
 
     if inventory.update(quantity: input.inventory)
+      ActionCable.server.broadcast('inventory_updates_channel', { store:, inventory: })
       { store: store }
     else
       { errors: inventory.errors.full_messages }
