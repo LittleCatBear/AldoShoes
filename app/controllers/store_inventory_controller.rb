@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
 class StoreInventoryController < ApplicationController
-  def index; end
+  def index
+    @stores = Store.all
+  end
 end

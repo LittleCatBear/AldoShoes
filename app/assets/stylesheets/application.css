@@ -13,3 +13,38 @@
  *= require_tree .
  *= require_self
  */
+
+#inventories {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.store-container {
+  flex: 0 0 auto;
+  width: 20%;
+  margin: 1em;
+  padding: 1em;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.shoe-container {
+  border: 1px solid #ddd;
+  padding: 1em;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1em;
+}
+
+.inventory-count {
+  font-weight: bold;
+}
+
+.low-inventory {
+  color: red;
+}
+
+.high-inventory {
+  color: green;
+}
