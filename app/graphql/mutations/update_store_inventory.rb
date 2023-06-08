@@ -6,8 +6,8 @@ class Mutations::UpdateStoreInventory < Mutations::BaseMutation
   argument :model, String, required: true
   argument :inventory, Integer, required: true
 
-  field :store, Types::StoreType, null: false
-  field :shoe, Types::ShoeType, null: false
+  field :store, Types::StoreType, null: true
+  field :shoe, Types::ShoeType, null: true
   field :errors, [String], null: true
 
   def resolve(store:, model:, inventory:)
